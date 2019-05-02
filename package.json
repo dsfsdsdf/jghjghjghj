@@ -1,0 +1,41 @@
+{
+  "name": "highwaybot",
+  "version": "2.0.3",
+  "description": "LE bot discord de la Highway, team pvp minecraft",
+  "main": "node index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaun14/highway_bot"
+  },
+  "author": "The Idiot's Guide Community",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chaun14/highway_bot"
+  },
+  "homepage": "https://github.com/chaun14/highway_bot",
+  "dependencies": {
+    "color": "^3.0.0",
+    "discord-money": "^0.2.0",
+    "discord-rich-presence": "0.0.7",
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.1.0",
+    "enmap": "^0.3.2",
+    "express": "^4.16.4",
+    "imgur": "^0.3.1",
+    "json-log": "^3.0.1",
+    "mojang-api": "0.0.2",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^1.3.0",
+    "ms": "^2.1.1",
+    "node-opus": "^0.3.0",
+    "request": "^2.88.0",
+    "ytdl-core": "^0.25.2"
+  }
+}

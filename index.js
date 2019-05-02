@@ -1667,17 +1667,3 @@ apbot.login(process.env.APTOKEN)
 
 
 
-
-const rpc = require('discord-rich-presence')('528217476350345217')
-rpc.updatePresence({
-    state: process.env.state,
-    details: process.env.details,
-    startTimestamp: Date.now(),
-    largeImageKey: process.env.largeimg,
-    smallImageKey: "ftnl2",
-    instance: true
-
-});
-
-
-console.log('rpc on');

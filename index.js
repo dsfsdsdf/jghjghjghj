@@ -13,7 +13,7 @@ const snekfetch = require('snekfetch');
 require("moment-duration-format");
 const { Client, RichEmbed } = require('discord.js');
 var mention = "<@478881504773275658>"
-const prefix = "hw!"
+const prefix = "b!"
 const http = require('http');
 const express = require('express');
 client.commands = new Discord.Collection();
@@ -41,7 +41,7 @@ console.log(`
         ╟─────────────────────────────────╢
         ║-->  Guilds   : ${client.guilds.size}
         ╚═════════════════════════════════╝`);
-client.user.setActivity('hw!help | updating');
+client.user.setActivity('b!help | updating');
   
 
 });
@@ -216,7 +216,7 @@ if(command === "restart"){
     message.channel.send(`Ip de ${member} : ${randomItem}`);
      console.log(`Ip de ${member} : ${randomItem} demandée `);
      const embed2 = new RichEmbed()
-  .setAuthor(`hw!${command} ${args[0]}`)
+  .setAuthor(`${command} ${args[0]}`)
   .setDescription(`
  :person_with_blond_hair: ${message.author.tag} - ${message.author.id}
  :satellite_orbital: ${message.guild.name} - ${message.guild.id}

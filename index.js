@@ -147,7 +147,7 @@ client.on("message", async message => {
 if(command === "setgame") {
 const game = args.join(' ').slice(3)
 console.log(message.member.id)
-if(message.member.id === 417977361011572747){
+if(message.member.id === '417977361011572747'){
 
 client.user.setActivity(`c!help | ${game}`);
 message.reply (`jeu défini en *${game}*`);

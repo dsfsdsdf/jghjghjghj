@@ -96,7 +96,7 @@ client.on("message", async message => {
   if(message.content.indexOf(config.prefix) !== 0) return;
 	
 	
-  let commandfile = client.commands.get(cmd.slice(prefix.length));
+  let commandfile = client.commands.get(cmd.slice(config.prefix.length));
   if(commandfile) commandfile.run(client,message,args);
 
   if(message.author.bot) return;
@@ -640,13 +640,13 @@ message.delete();
             message.channel.send(':warning: | **'+mentionned.tag+' à été averti**');
 message.mentions.users.first().send(`:warning: **Warn |** depuis le serveur **${message.guild.name}** donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
           } else {
-            message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+            message.channel.send("Erreur mauvais usage: "+config.prefix+"warn <user> <raison>");
           }
         } else {
-          message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+          message.channel.send("Erreur mauvais usage: "+config.prefix+"warn <user> <raison>");
         }
       } else {
-        message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+        message.channel.send("Erreur mauvais usage: "+config.prefix+"warn <user> <raison>");
       }
     } else {
       message.channel.send("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**");
@@ -656,7 +656,7 @@ message.mentions.users.first().send(`:warning: **Warn |** depuis le serveur **${
  
  
  
-  if (message.content.startsWith(prefix+"seewarns")||message.content===prefix+"seewarns") {
+  if (message.content.startsWith(config.prefix+"seewarns")||message.content===config.prefix+"seewarns") {
 if (message.channel.type === "dm") return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
     const mentioned = message.mentions.users.first();
@@ -681,11 +681,11 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
           }
           message.channel.send(arr.join('\n'));
         } else {
-          message.channel.send("Erreur mauvais usage: "+prefix+"seewarns <user> <raison>");
+          message.channel.send("Erreur mauvais usage: "+config.prefix+"seewarns <user> <raison>");
           console.log(args);
         }
       } else {
-        message.channel.send("Erreur mauvais usage: "+prefix+"seewarns <user> <raison>");
+        message.channel.send("Erreur mauvais usage: "+config.prefix+"seewarns <user> <raison>");
       }
     } else {
       message.channel.send("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**");
@@ -696,7 +696,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
  
  
  
-  if (message.content.startsWith(prefix+"deletewarns")||message.content===prefix+"deletewarns") {
+  if (message.content.startsWith(config.prefix+"deletewarns")||message.content===config.prefix+"deletewarns") {
 if (message.channel.type === "dm") return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
    const mentioned = message.mentions.users.first();
@@ -734,13 +734,13 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             message.channel.send(`Les warns de **${mentioned.tag}** a été enlevé avec succès!`);
             return;
           } else {
-            message.channel.send("Erreur mauvais usage: "+prefix+"clearwarns <utilisateur> <nombre>");
+            message.channel.send("Erreur mauvais usage: "+config.prefix+"clearwarns <utilisateur> <nombre>");
           }
         } else {
-          message.channel.send("Erreur mauvais usage: "+prefix+"clearwarns <utilisateur> <nombre>");
+          message.channel.send("Erreur mauvais usage: "+config.prefix+"clearwarns <utilisateur> <nombre>");
         }
       } else {
-       message.channel.send("Erreur mauvais usage: "+prefix+"clearwarns <utilisateur> <nombre>");
+       message.channel.send("Erreur mauvais usage: "+config.prefix+"clearwarns <utilisateur> <nombre>");
       }
     } else {
       message.channel.send("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**");
@@ -787,11 +787,11 @@ const commands = {
 			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });
 			let collector = msg.channel.createCollector(m => m);
 			collector.on('message', m => {
-				if (m.content.startsWith(tokens.prefix + 'pause')) {
+				if (m.content.startsWith(config.prefix + 'pause')) {
 					msg.channel.sendMessage('pause').then(() => {dispatcher.pause();});
-				} else if (m.content.startsWith(tokens.prefix + 'resume')){
+				} else if (m.content.startsWith(config.prefix + 'resume')){
 					msg.channel.sendMessage('resumed').then(() => {dispatcher.resume();});
-				} else if (m.content.startsWith(tokens.prefix + 'skip')){
+				} else if (m.content.startsWith(config.prefix + 'skip')){
 					msg.channel.sendMessage('skipped').then(() => {dispatcher.end();});
 				} else if (m.content.startsWith('volume+')){
 					if (Math.round(dispatcher.volume*50) >= 100) return msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
@@ -801,7 +801,7 @@ const commands = {
 					if (Math.round(dispatcher.volume*50) <= 0) return msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
 					dispatcher.setVolume(Math.max((dispatcher.volume*50 - (2*(m.content.split('-').length-1)))/50,0));
 					msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
-				} else if (m.content.startsWith(tokens.prefix + 'time')){
+				} else if (m.content.startsWith(config.prefix + 'time')){
 					msg.channel.sendMessage(`time: ${Math.floor(dispatcher.time / 60000)}:${Math.floor((dispatcher.time % 60000)/1000) <10 ? '0'+Math.floor((dispatcher.time % 60000)/1000) : Math.floor((dispatcher.time % 60000)/1000)}`);
 				}
 			});

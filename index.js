@@ -144,6 +144,19 @@ client.on("message", async message => {
   }
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
+if(command === "setgame") {
+const game = args.join(' ').slice(3)
+
+if(message.member.id === 417977361011572747){
+
+client.user.setActivity(`c!help | ${game}`);
+message.reply (`jeu défini en *${game}*`);
+} else {
+message.channel.send('Désolé cette commande est reservée à chaun14')
+}
+}
+
+
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■

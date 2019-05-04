@@ -40,8 +40,7 @@ console.log(`
         ╟─────────────────────────────────╢
         ║-->  Guilds   : ${client.guilds.size}
         ╚═════════════════════════════════╝`);
-client.user.setActivity('c!help | updating');
-  
+client.user.setActivity(`c!help | Bonjour!`, { type: 'STREAMING', url: 'https://www.twitch.tv/ftnl' });
 
 });
 
@@ -148,8 +147,7 @@ if(command === "setgame") {
 const game = args.join(' ');
 console.log(message.member.id)
 if(message.member.id === '417977361011572747'){
-
-client.user.setActivity(`c!help | ${game}`);
+client.user.setActivity(`c!help | ${game}`, { type: 'STREAMING', url: 'https://www.twitch.tv/ftnl' });
 message.reply (`jeu défini en *${game}*`);
 } else {
 message.channel.send('Désolé cette commande est reservée à chaun14')

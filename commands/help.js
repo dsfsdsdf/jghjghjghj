@@ -1,8 +1,8 @@
 const { Discord, RichEmbed} = require('discord.js');
-const config = require("./config.json");
+const config = require("././config.json");
 
 module.exports.run = async (bot, message, args) => {
-  console.log("ip");
+  console.log("help");
 
   const embed = new RichEmbed()
   .setColor(0x3399ff)

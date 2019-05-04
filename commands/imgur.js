@@ -30,7 +30,7 @@ imgur.uploadUrl(Attachment[0].url)
 
   }
 
-
+}
 
 
 module.exports.help = {

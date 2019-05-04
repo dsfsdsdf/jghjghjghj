@@ -463,37 +463,6 @@ message.channel.send(embed);
 
 
 
-if (command === "upl") {
-  if (uplRecently.has(message.author.id)) {
-    message.channel.send("C'est une commande assez gourmande pour le bot. Veuillez attendre 10s - " + message.author);
-} else {
-var Attachment = (message.attachments).array()
-const msg = args.join(" ")
-console.log(Attachment[0].url)
-//  if(sayMessage === "") {
-//message.channel.send("test");}
-console.log("1")
-console.log(message.attachments)
-if (Attachment[0].url === undefined) {
-  console.log("erreur")
-  return
-}
-imgur.setAPIUrl('https://api.imgur.com/3/');
-imgur.uploadUrl(Attachment[0].url)
-    .then(function (json) {
-        console.log(json.data.link);
-        message.channel.send(json.data.link)
-    })
-    .catch(function (err) {
-        console.error(err.message);
-    });
-}
-uplRecently.add(message.author.id);
-setTimeout(() => {
-  // Removes the user from the set after a minute
-  uplRecently.delete(message.author.id);
-}, 10000);
-}
 });
 //■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■
 //■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■●■

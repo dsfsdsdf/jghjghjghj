@@ -1,4 +1,6 @@
 const { Discord, RichEmbed} = require('discord.js');
+var imgur = require('imgur');
+
 module.exports.run = async (bot, message, args) => {
   console.log("imgur");
 
@@ -11,6 +13,7 @@ console.log("1")
 console.log(message.attachments)
 if (Attachment[0].url === undefined) {
   console.log("erreur")
+  message.reply("erreur")
   return
 }
 imgur.setAPIUrl('https://api.imgur.com/3/');
@@ -21,6 +24,7 @@ imgur.uploadUrl(Attachment[0].url)
     })
     .catch(function (err) {
         console.error(err.message);
+        message.reply("erreur")
     });
 }
 

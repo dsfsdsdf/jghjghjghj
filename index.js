@@ -145,7 +145,7 @@ client.on("message", async message => {
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 if(command === "setgame") {
-const game = args.join(' ').slice(3)
+const game = args.join(' ');
 console.log(message.member.id)
 if(message.member.id === '417977361011572747'){
 

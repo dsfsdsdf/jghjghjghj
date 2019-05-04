@@ -13,7 +13,6 @@ const snekfetch = require('snekfetch');
 require("moment-duration-format");
 const { Client, RichEmbed } = require('discord.js');
 var mention = "<@478881504773275658>"
-const prefix = "b!"
 const http = require('http');
 const express = require('express');
 client.commands = new Discord.Collection();
@@ -41,7 +40,7 @@ console.log(`
         ╟─────────────────────────────────╢
         ║-->  Guilds   : ${client.guilds.size}
         ╚═════════════════════════════════╝`);
-client.user.setActivity('b!help | updating');
+client.user.setActivity('c!help | updating');
   
 
 });

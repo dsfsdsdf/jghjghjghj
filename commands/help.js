@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
    .addField(`${config.prefix}help`, "affiche ce menu", false)
    .addField(`${config.prefix}fun`, "les commandes censées être fun", false)
    .addField(`${config.prefix}tools`, "affichez le couteau suisse du serveur", false)
-   .addField(`pas d'inspiration`, "🐑", true)
+   .addField(`${config.prefix}stats`, "diverses api sympathiques", true)
   message.channel.send(embed);
   }
 

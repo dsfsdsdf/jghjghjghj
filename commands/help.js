@@ -1,4 +1,6 @@
 const { Discord, RichEmbed} = require('discord.js');
+const config = require("./config.json");
+
 module.exports.run = async (bot, message, args) => {
   console.log("ip");
 

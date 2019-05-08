@@ -37,5 +37,6 @@
     "node-opus": "^0.3.0",
     "request": "^2.88.0",
     "ytdl-core": "^0.25.2"
+    "node-iplocate": "^1.0.1",
   }
 }

@@ -17,6 +17,7 @@ iplocate(args[1]).then(function(results) {
     .setDescription("")
     .addField("Pays: ", results.country + " (" + results.country_code + ")")
     .addField(":earth_americas: Continent: ", results.continent)
+    .addField("Ville: ", results.city)
     .addField("Propriétaire: ", results.org + " (" + results.asn + ")")
     .setColor(randomColor)
     

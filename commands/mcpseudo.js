@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
        snekfetch.get(`https://api.mojang.com/user/profiles/${uuid}/names`).then(r => {   
         let embed = new RichEmbed()
           .setTitle(`Liste des pseudos de ${pseudo}`)
-          .setFooter('blabla')
+          .setFooter('chaun_bot by chaun14')
           .setColor('GREEN');
           
         r.body.forEach(item => {

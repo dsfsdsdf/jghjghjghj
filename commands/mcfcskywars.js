@@ -4,7 +4,7 @@ const snekfetch = require('snekfetch');
 module.exports.run = async (bot, message, args) => {
     const pseudo = args[1]
     //if (args[0] === "") return message.reply("Tu n'as pas spécifié de pseudo minecraft");
-    snekfetch.get(`http://www.lordmorgoth.tk/API/stats?periode=toujours&joueur=${pseudo}&mode=skywars`).then(r => {    console.log(r.body)
+    snekfetch.get(`http://www.lordmorgoth.tk/API/stats?periode=toujours&joueur=${pseudo}&mode=skywars&key=${process.env.FCKEY}`).then(r => {    console.log(r.body)
    
    
     console.log(r.body.error)
